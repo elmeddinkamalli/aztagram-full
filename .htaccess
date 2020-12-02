@@ -1,0 +1,11 @@
+Options +MultiViews
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^user/([0-9]+)?$ user?user=$1 [NC]
+
